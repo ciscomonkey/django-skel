@@ -40,9 +40,18 @@ This is just a skeleton application that has user login/logout and our personal 
 3. Edit settings/base.py
 
     ```
+    SECRET_KEY = 'BETTER CHANGE ME!'
     WSGI_APPLICATION = 'skel.wsgi.application'
     ROOT_URLCONF = 'skel.urls'
     ```
+
+    To generate a new secret key the way Django does:
+    
+    ```python
+    >>> import random
+    >>> ''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50))
+    ```
+
 4. Run migrate ```./manage.py migrate```
 5. Create super user ```./manage.py createsuperuser```
 6. Run server: ```./manage.py runserver --settings=settings.test```
