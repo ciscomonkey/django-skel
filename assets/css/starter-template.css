@@ -1,0 +1,119 @@
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('/static/fonts/montserrat/Montserrat-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('/static/fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url('/static/fonts/montserrat/Montserrat-ExtraBold.ttf'); 
+}
+
+
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+
+.navbar-brand img {
+    height: 30px;
+}
+
+.btn-outline-primary {
+    color: #C40508; 
+    border-color: #C40508; 
+}
+
+.btn-outline-primary:hover {
+    background-color: #C40508; 
+    border-color: #C40508; 
+}
+
+.btn-primary {
+    background-color: #C40508; 
+    border-color: #C40508; 
+}
+
+.btn-primary:hover {
+    background-color: #aa0306;
+    border-color: #aa0306;
+}
+
+
+.fancy {
+    font-family: Montserrat-Regular;
+}
+.fancy-bold {
+    font-family: Montserrat-Bold;
+}
+
+.appname {
+    /*font-family: Arial; */
+    font-family: Montserrat-ExtraBold;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ee0000;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  font-size: .875rem;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px; /* Height of navbar */
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}

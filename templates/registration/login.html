@@ -1,0 +1,74 @@
+{% load widget_tweaks %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    {%block title %}<title>Signin Template for Bootstrap</title>{% endblock %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts/Linearicons-Free-v1.0.0/icon-font.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "css/login.css" %}">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      {{ form.username | attr:"class:form-control" | attr:"placeholder:Username" }}
+      <label for="inputPassword" class="sr-only">Password</label>
+      {{ form.password | attr:"class:form-control" | attr:"placeholder:Password"}}
+      <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p><a href="{% url 'password_reset' %}" >Forgot Username / Password?</a>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+
+    {% block footer %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+
+    {% endblock %}
+  </body>
+</html>
+<!--
+          <div class="wrap-input100 text-center p-t-20 p-b-45">
+          {% if form.errors %}
+            <div class="alert alert-danger" role="alert">Bad username and/or password.</div>
+          {% endif %}
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
+            {{ form.username | attr:"class:input100" | attr:"placeholder:Username" }} 
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+            {{ form.password | attr:"class:input100" | attr:"placeholder:Password"}}
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+-->
